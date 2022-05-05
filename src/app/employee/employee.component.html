@@ -1,1 +1,20 @@
-<p>employee works!</p>
+<div class="container">
+<table class="table table-striped px-3">
+    <thead class="table-light">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Image</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Action</th>
+    </thead>
+<tbody *ngFor="let emp of response?.results; let i=index">
+    <td>{{emp.uuid}}</td>
+    <td>{{emp.firstName}}</td>
+    <td ><img [src]="emp.imageUrl" height="40" width="40" style="border-radius: 50%;"></td>
+    <td>{{emp.address}}</td>
+    <td>{{emp.phone}}</td>
+    <td><button class="btn">Details</button></td>
+</tbody>
+</table>
+</div>

@@ -35,7 +35,7 @@ export class EmployeeServiceService {
         email: emp.email,
         username: emp.login.username,
         gender: emp.gender,
-        address: `{emp.location.street.number}  {emp.location.street.name} {emp.location.street.city} {emp.location.street.country} `,
+        address: `${emp.location.street.number} ${emp.location.street.name} ${emp.location.city} ${emp.location.country} `,
         dateOfBirth: emp.dob.date,
         phone: emp.phone,
         imageUrl: emp.picture.large,
