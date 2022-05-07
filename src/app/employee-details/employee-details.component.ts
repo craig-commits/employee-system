@@ -13,13 +13,13 @@ export class EmployeeDetailsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private employeeService: EmployeeServiceService) { }
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe((params :ParamMap) => {
+    this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
       console.log(params.get('uuid'))
-      this.employeeService.getEmployee(params.get('uuid')!).subscribe((response:any) => {
+      this.employeeService.getEmployee(params.get('uuid')!).subscribe((response: any) => {
         this.response = response;
-        console.log(response)
+        console.log(this.response)
       })
-      })
-}
+    })
+  }
 
 }
