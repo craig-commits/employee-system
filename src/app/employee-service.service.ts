@@ -19,8 +19,8 @@ export class EmployeeServiceService {
     );
   }
 
-  getEmployee(uuid:number):Observable<any>{
-    return this.http.get<any>(`{this.api}/?uuid=${uuid}`).pipe(
+  getEmployee(uuid:string):Observable<any>{
+    return this.http.get<any>(`${this.api}/?uuid=${uuid}`).pipe(
       map( response => this.processData(response))
     )
   }

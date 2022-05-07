@@ -14,7 +14,7 @@
     <td ><img [src]="emp.imageUrl" height="40" width="40" style="border-radius: 50%;"></td>
     <td>{{emp.address}}</td>
     <td>{{emp.phone}}</td>
-    <td><button class="btn">Details</button></td>
+    <td><button class="btn btn-primary" [routerLink]="['/employee',emp.uuid]" type="button">Details</button></td>
 </tbody>
 </table>
 </div>
