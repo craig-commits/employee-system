@@ -1,0 +1,19 @@
+  .map-wrapper {
+    position: relative;
+    height: 500px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 10px;
+  }
+  
+  .map-border {
+    border: 5px solid black;
+    height: 100%;
+  }
+  
+  #map {
+    height: 100%;
+  }
+  
