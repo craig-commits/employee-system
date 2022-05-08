@@ -24,21 +24,17 @@ export class EmployeeDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((params: ParamMap) => {
-      console.log(params.get('uuid'))
       this.employeeService.getEmployee(params.get('uuid')!).subscribe((response: any) => {
         this.response = response;
-        console.log(this.response)
-        if(this.response?.results[0]?.coordinates != undefined){
-          console.log(this.response?.results[0]?.coordinates)
-        this.loadMap(this.response?.results[0]?.coordinates)
+        if (this.response?.results[0]?.coordinates != undefined) {
+          this.loadMap(this.response?.results[0]?.coordinates)
         }
       })
     })
-    
+
   }
 
   private loadMap(coordinate: Coordinates): void {
-    console.log("inside map function")
     const map = Leaflet.map('map', {
       center: [coordinate.latitude, coordinate.longitude],
       zoom: 8
@@ -47,7 +43,7 @@ export class EmployeeDetailsComponent implements OnInit {
       tileSize: 512,
       zoomOffset: -1,
       minZoom: 1,
-      maxZoom:30,
+      maxZoom: 30,
       crossOrigin: true,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     });
@@ -55,6 +51,5 @@ export class EmployeeDetailsComponent implements OnInit {
     const marker = Leaflet.marker([coordinate.latitude, coordinate.longitude], { icon: this.marker });
     marker.addTo(map).bindPopup(`${this.response.results[0].firstName}'s Location`).openPopup();
   }
-
 
 }

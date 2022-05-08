@@ -7,13 +7,12 @@ import { EmployeeServiceService } from '../employee-service.service';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-  response:any;
-  constructor(private employeeService:EmployeeServiceService) { }
+  response: any;
+  constructor(private employeeService: EmployeeServiceService) { }
 
   ngOnInit(): void {
-    this.employeeService.getEmployees(10).subscribe((data)=> {
-      console.log(data)
-      this.response = data; 
+    this.employeeService.getEmployees(10).subscribe((data) => {
+      this.response = data;
     })
   }
 
