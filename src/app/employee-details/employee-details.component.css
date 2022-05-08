@@ -7,13 +7,24 @@
     bottom: 0;
     margin: 10px;
   }
-  
+
+  .container {
+    height: 100vh;
+  }
+
   .map-border {
     border: 5px solid black;
     height: 100%;
   }
-  
+
   #map {
     height: 100%;
   }
-  
+
+  label {
+    font-weight: bold;
+  }
+
+  .card {
+    background-color: rgba(193, 124, 193, 0.3) !important;
+  }

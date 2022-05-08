@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-4">
 <table class="table table-striped px-3">
     <thead class="table-light">
         <th>Image</th>
@@ -7,7 +7,7 @@
         <th>Action</th>
     </thead>
 <tbody *ngFor="let emp of response?.results; let i=index">
-    <td><img [src]="emp.imageUrl" height="40" width="40" style="border-radius: 50%;"></td>
+    <td><img [src]="emp.imageUrl" height="50" width="50" style="border-radius: 50%;"></td>
     <td>{{emp.firstName}}</td>
     <td>{{emp.username}}</td>
     <td><button class="btn" [routerLink]="['/employee',emp.uuid]" type="button">Details</button></td>
